@@ -1,0 +1,147 @@
+/*
+Theme Name: ZFWP HDLaw
+Author: Marketing In Color
+Author URI: http://marketingincolor.com/
+Description: This is a BASELINE WordPress theme built for Zurb Foundation, but without reliance on SASS or Bower or any other extraneous coding structures. It uses a mobile-first approach for the best display regardless of device used.
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: Zurb, Foundation, WordPress, responsive-layout, mobile-ready
+Text Domain: zfwpbase
+
+*/
+
+/**
+ * INDEX:
+ * 1.0 - Foundation Overrides
+ * 2.0 - Repeatable Patterns
+ * 3.0 - Basic Structure
+ * 4.0 - Header
+ *   4.1 - Site Header
+ *   4.2 - Navigation
+ * 5.0 - Content
+ *   5.1 - Entry Header
+ *   5.2 - Entry Meta
+ *   5.3 - Entry Content
+ *   5.4 - Galleries
+ *   5.5 - Post Formats / Subpages
+ *   5.6 - Attachments
+ *   5.7 - Post/Paging Navigation
+ *   5.8 - Author Bio
+ *   5.9 - Archives
+ *   5.10 - Search Results/No posts
+ *   5.11 - Comments
+ *   5.12 - Multisite
+ * 6.0 - Sidebar
+ *   6.1 - Widgets
+ * 7.0 - Footer
+ * 8.0 - Media Queries / Mobile
+ * 9.0 - Print
+ */
+
+/**
+ * 1.0 Foundation Overrides
+ * -----------------------------------------------------------------------------
+ */
+body {
+    font-family: 'Muli', sans-serif;
+}
+
+h1 { /*font-size: 32px; font-size: 2rem;*/  }
+h2 { /*font-size: 28px; font-size: 1.8rem;*/  }
+h3 { /*font-size: 24px; font-size: 1.5rem;*/  }
+h4 { /*font-size: 18px; font-size: 1.125rem;*/  }
+h5 { /*font-size: 16px; font-size: 1rem;*/  }
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Muli', sans-serif;
+}
+
+p {
+
+}
+
+.row {
+    margin: 0 auto;
+    max-width: 60em; /*changes 62.5em (1000px) to 60em (960px)*/
+    width: 100%;
+}
+
+/**
+ * 2.0 Primary Layout
+ * -----------------------------------------------------------------------------
+ */
+body {
+    background: url(img/hdl-grfx-home-bgnd.jpg) no-repeat top center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.default {
+    background-color:#fff;
+}
+#frame {
+    margin:auto;
+    padding:auto;
+}
+/**
+ * 4.0 Header
+ * -----------------------------------------------------------------------------
+ */
+header {
+    background-color:#fff;
+}
+.site-header {
+    margin:30px 0px;
+}
+/**
+ * 5.0 Content
+ * -----------------------------------------------------------------------------
+ */
+.entry-title { font-size: 24px; font-weight:bold; color:#1d2c6b; }
+.frontpage-news-slider, .frontpage-news-slider div { text-align: center; }
+.frontpage-news-slider div img { border-radius:5px; border: 1px solid #fff; margin:auto; }
+.frontpage-profiles-slider, .frontpage-profiles-slider div { text-align: center; }
+.frontpage-profiles-slider div img { border-radius:5px; border: 1px solid #48c2c1; margin:auto; }
+
+#front-page-news { background-color:#48c2c1; color:#fff; }
+#front-page-news h3 { text-align:center; color:#fff; }
+#front-page-separator { border-right: 1px solid #48c2c1; }
+
+/**
+ * 7.0 Footer
+ * -----------------------------------------------------------------------------
+ */
+footer {
+    background-color:#6c6c6f;
+}
+.site-footer {
+
+    background-color:#6c6c6f;
+}
+.site-info {
+    background-color:#50575b;
+}
+
+
+/**
+ * 8.0 Mobile
+ * -----------------------------------------------------------------------------
+ */
+
+.mobile-header {
+    background-color:#47c2bf;
+    text-align:center;
+    padding:0.9375rem;
+}
+.mobile-nav {
+    background-color:#239b98;
+    text-align:center;
+    padding:0.9375rem;
+}
+@media only screen and (max-width: 40em) {
+    body {
+        background: #fff no-repeat top center fixed;
+    }
+}
