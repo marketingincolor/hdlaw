@@ -22,11 +22,11 @@
 	<title><?php bloginfo('name'); ?> </title>
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-	<link href='http://fonts.googleapis.com/css?family=Muli:300,400' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Muli:400,400italic,300italic,300' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/foundation.min.css" />
 	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/style.css" type="text/css" />
 	<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/slick/slick.css"/>
-	<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/slick/slick-theme.css"/>
+	<!--<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/slick/slick-theme.css"/>-->
 	<script src="<?php echo get_template_directory_uri(); ?>/js/vendor/modernizr.js"></script>
 
 	<?php wp_head(); ?>
@@ -40,15 +40,16 @@
 			<header id="masthead" class="site-header" role="banner">
 			<div class="row">
 				<div class="small-4 columns">
-
 					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php echo get_template_directory_uri(); ?>/img/hdl-grfx-hdr-logo.png" /></a>
 
 				</div>
-				<div class="small-4 columns">
-					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php echo get_template_directory_uri(); ?>/img/hdl-grfx-hdr-cta.png" /></a>
+				<div class="small-4 columns" style="text-align:center;">
+					<a href="<?php echo esc_url( home_url( '/contact-us' ) ); ?>" rel="home" style="margin-top:20px; display:block;"><img src="<?php echo get_template_directory_uri(); ?>/img/hdl-grfx-hdr-cta.png" /></a>
 				</div>
-				<div class="small-4 columns">
-					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">contact links</a>
+				<div class="small-4 columns" style="text-align:right;">
+					<h3>Call Toll-Free</h3>
+					<h2 style="font-size:24px;"><?php do_action( 'cta_phone' ); ?></h2>
+					<h4 style="font-style:italic;"><?php bloginfo( 'description' ); ?></h4>
 				</div>
 			</div>
 			</header>
@@ -58,7 +59,7 @@
 		<div class="small-12 show-for-small-down">
 			<header id="masthead" class="mobile-header" role="banner">
 				<div class="site-description"><?php bloginfo( 'description' ); ?></div>
-				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php echo get_template_directory_uri(); ?>/img/hdl-grfx-mob-hdr-logo.png"</a>
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php echo get_template_directory_uri(); ?>/img/hdl-grfx-mob-hdr-logo.png" /></a>
 			</header>
 		</div>
 	</div>
@@ -79,7 +80,7 @@
 						'container'       => false,
 						'container_class' => '',
 						'container_id'    => '',
-						'menu_class'      => '',
+						'menu_class'      => 'main-menu',
 						'menu_id'         => 'mid',
 						'fallback_cb'     => 'wp_page_menu',
 						'link_before'     => '',
@@ -94,7 +95,7 @@
 
 		</div>
 		<div class="small-12 show-for-small-down">
-			<div class="mobile-nav">Menu</div>
+			<?php include get_template_directory() . '/includes/mobile-nav.php'; ?>
 		</div>
 
 	</div>
@@ -105,10 +106,10 @@
 
 
 	<?php if ( is_front_page() || is_home() ) : ?>
-		<div class="small-12 columns">
+		<div id="main-content" class="small-12 columns">
 			<section class="scroll-container" role="main">
 	<?php else : ?>
-		<div class="small-12 medium-8 columns">
+		<div id="main-content" class="small-12 medium-8 columns">
 			<section class="scroll-container" role="main">
 	<?php endif; ?>
 

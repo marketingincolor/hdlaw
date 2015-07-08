@@ -12,9 +12,9 @@
  */
 
 get_header(); ?>
-	<div class="row">
+	<div class="row collapse medium-uncollapse">
 
-		<div class="small-12<?php echo ( is_front_page() ? '' : ' columns'); ?>">
+		<div class="small-12 columns">
 
 			<?php
 			// Start the loop.
@@ -36,7 +36,7 @@ get_header(); ?>
 			endwhile;
 			?>
 
-		</main>
+		</div>
 	</div>
 
 <?php get_footer(); ?>

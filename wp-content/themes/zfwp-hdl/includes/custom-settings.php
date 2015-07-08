@@ -54,6 +54,14 @@ class CustomSettingsPage
 		);
 
 		add_settings_field(
+			'pri_phone',
+			'Primary Phone',
+			array( $this, 'pp_callback' ),
+			'custom-setting-admin',
+			'setting_section_id'
+		);
+
+		add_settings_field(
 			'fb_link',
 			'Facebook Link',
 			array( $this, 'fb_callback' ),
@@ -88,6 +96,8 @@ class CustomSettingsPage
 	public function sanitize( $input )
 	{
 		$new_input = array();
+		if( isset( $input['pp_link'] ) )
+			$new_input['pp_link'] = sanitize_text_field( $input['pp_link'] );
 		if( isset( $input['fb_link'] ) )
 			$new_input['fb_link'] = sanitize_text_field( $input['fb_link'] );
 		if( isset( $input['tw_link'] ) )
@@ -102,6 +112,13 @@ class CustomSettingsPage
 	public function print_section_info()
 	{
 		print 'Enter your settings below:';
+	}
+	public function pp_callback()
+	{
+		printf(
+			'<input type="text" id="pp_link" name="custom_option_name[pp_link]" value="%s" />',
+			isset( $this->options['pp_link'] ) ? esc_attr( $this->options['pp_link']) : ''
+		);
 	}
 	public function fb_callback()
 	{

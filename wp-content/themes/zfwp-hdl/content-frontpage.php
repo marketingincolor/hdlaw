@@ -7,47 +7,22 @@
  * @since ZFWP Base 1.0
  */
 ?>
-<div class="row">
+<div class="row medium-uncollapse">
 	<div id="front-page-services" class="hide-for-small medium-12 columns">
-
-		<ul class="small-block-grid-5">
-			<li>
-				<h3>Appeals, Writs, & Trial Support</h3>
-				<img src="http://satyr.io/82" /><br />
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-			</li>
-			<li>
-				<h3>Appeals, Writs, & Trial Support</h3>
-				<img src="http://satyr.io/82" /><br />
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-			</li>
-			<li>
-				<h3>Appeals, Writs, & Trial Support</h3>
-				<img src="http://satyr.io/82" /><br />
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-			</li>
-			<li>
-				<h3>Appeals, Writs, & Trial Support</h3>
-				<img src="http://satyr.io/82" /><br />
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-			</li>
-			<li>
-				<h3>Appeals, Writs, & Trial Support</h3>
-				<img src="http://satyr.io/82" /><br />
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-			</li>
-		</ul>
-
+		<?php include get_template_directory() . '/includes/services-list.php'; ?>
 	</div>
 </div>
 
-<div class="row">
+<div class="row small-collapse medium-uncollapse">
 	<div id="front-page-separator" class="hide-for-small medium-5 columns">
 
 		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-			<div class="post-thumbnail">
+
+		<?php if ( has_post_thumbnail() ) : ?>
+			<div class="entry-thumbnail">
 				<?php the_post_thumbnail(); ?>
-			</div><!-- .post-thumbnail -->
+			</div>
+		<?php endif; ?>
 
 			<header class="entry-header">
 				<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
@@ -75,9 +50,3 @@
 	</div>
 </div>
 <div class="show-for-medium-up">&nbsp;</div>
-<div class="row">
-	<div id="front-page-news" class="small-12 columns">
-		<h3>News</h3>
-		<?php include get_template_directory() . '/includes/frontpage-news.php'; ?>
-	</div>
-</div>

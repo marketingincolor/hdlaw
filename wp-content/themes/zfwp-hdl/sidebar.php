@@ -7,12 +7,17 @@
  * @since ZFWP Base 1.0
  */
 ?>
+<div class="sidebar columns">
 
-	<div>
-		<p>Contact Us form</p>
+	<?php if ( is_page('contact-us') ) : ?>
+		<?php include get_template_directory() . '/includes/contact-sidebar.php'; ?>
+	<?php else : ?>
+	<div class="columns show-for-medium-up">
+		<?php if ( function_exists( 'ccf_output_form' ) ) {
+			echo do_shortcode( '[ccf_display id="64"]' );
+		} ?>
 	</div>
-
-<?php //if ( is_active_sidebar( 'sidebar-1' )  ) : ?>
+	<?php endif; ?>
 
 	<div id="secondary" class="secondary">
 
@@ -33,5 +38,4 @@
 		<?php endif; ?>
 
 	</div><!-- .secondary -->
-
-<?php //endif; ?>
+</div>

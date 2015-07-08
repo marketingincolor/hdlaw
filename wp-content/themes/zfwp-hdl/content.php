@@ -10,10 +10,13 @@
  */
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<div class="post-thumbnail">
+<article id="post-<?php the_ID(); ?>" <?php post_class( 'columns' ); ?>>
+
+<?php if ( has_post_thumbnail() ) : ?>
+	<div class="entry-thumbnail">
 		<?php the_post_thumbnail(); ?>
-	</div><!-- .post-thumbnail -->
+	</div>
+<?php endif; ?>
 
 	<div class="entry-header">
 		<?php

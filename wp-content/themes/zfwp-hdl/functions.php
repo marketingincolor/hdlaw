@@ -24,10 +24,10 @@ if ( ! function_exists( 'theme_setup' ) ) :
 		add_theme_support( 'automatic-feed-links' );
 		// Enable support for Post Thumbnails, and declare two sizes.
 		add_theme_support( 'post-thumbnails' );
-		//set_post_thumbnail_size( 280, 270 );
-
-		//add_image_size( 'main-thumb', 280, 270, true );
-		//add_image_size( 'related-thumb', 180, 124, true );
+		set_post_thumbnail_size( 294, 208 );
+		add_image_size( 'news-thumb', 250, 130, true );
+		add_image_size( 'related-thumb', 220, 115, true );
+		add_image_size( 'profile-thumb', 110, 150, true );
 
 		// This theme uses wp_nav_menu() in two locations.
 		register_nav_menus( array(
@@ -115,23 +115,46 @@ add_action( 'widgets_init', 'theme_widgets_init' );
 //}
 //add_action( 'wp_enqueue_scripts', 'theme_scripts' );
 
+// Shortcode for display of Custom Contact Forms [ccf id="##"]
+function ccf_shortcode ( $atts ){
+	$val = shortcode_atts( array(
+		'id' => '0'
+	), $atts );
+	$form_id = $val['id'];
+	return ccf_output_form( $form_id );
+}
+add_shortcode('ccf_display', 'ccf_shortcode');
+
 //Create custom display for Social Media icons as grouped set.
 function display_social_media_icons( $pagelocation ){
 	$custom_option = get_option('custom_option_name');
 	$stringfix = ($pagelocation == 'header' ? 'left' : 'center');
 	echo '<div class="social-icons">';
 	echo '<p style="text-align:' . $stringfix . ';" >' ;
-	echo '<a href="'.$custom_option['fb_link'].'" target="_blank"><img src="'. get_template_directory_uri(). '/img/hdl-grfx-ico-sm-fb.png"></a>&nbsp;';
-	echo '<a href="'.$custom_option['tw_link'].'" target="_blank"><img src="'. get_template_directory_uri(). '/img/hdl-grfx-ico-sm-tw.png"></a>&nbsp;';
-	echo '<a href="'.$custom_option['gp_link'].'" target="_blank"><img src="'. get_template_directory_uri(). '/img/hdl-grfx-ico-sm-gp.png"></a>&nbsp;';
-	echo '<a href="'.$custom_option['li_link'].'" target="_blank"><img src="'. get_template_directory_uri(). '/img/hdl-grfx-ico-sm-li.png"></a>';
+	echo '&nbsp;<a href="'.$custom_option['fb_link'].'" target="_blank"><img src="'. get_template_directory_uri(). '/img/hdl-grfx-ico-sm-fb.png"></a>&nbsp;';
+	echo '&nbsp;<a href="'.$custom_option['tw_link'].'" target="_blank"><img src="'. get_template_directory_uri(). '/img/hdl-grfx-ico-sm-tw.png"></a>&nbsp;';
+	echo '&nbsp;<a href="'.$custom_option['gp_link'].'" target="_blank"><img src="'. get_template_directory_uri(). '/img/hdl-grfx-ico-sm-gp.png"></a>&nbsp;';
+	echo '&nbsp;<a href="'.$custom_option['li_link'].'" target="_blank"><img src="'. get_template_directory_uri(). '/img/hdl-grfx-ico-sm-li.png"></a>&nbsp;';
 	echo '</p></div>';
 }
 add_action( 'social_icons', 'display_social_media_icons', 10, 1 );
 
+//Create custom display for Company Phone Number Call To Action.
+function display_cta_phone(){
+	$custom_option = get_option('custom_option_name');
+	$location_phone = $custom_option['pp_link'];
+	echo '<div class="cta-phone">';
+	echo '<a href="tel://'.$location_phone.'">'.$location_phone.'</a>';
+	echo '</div>';
+}
+add_action( 'cta_phone', 'display_cta_phone', 10, 1 );
+
+
+add_post_type_support( 'page', 'excerpt');
+
 // Alter length of the Excerpt.
 function custom_excerpt_length( $length ) {
-	return 40;
+	return 30;
 }
 add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 
@@ -144,3 +167,12 @@ add_filter('excerpt_more', 'new_excerpt_more');
 //Enable Shortcodes in Widgets
 add_filter( 'widget_text', 'shortcode_unautop');
 add_filter( 'widget_text', 'do_shortcode');
+
+function get_id_by_slug($page_slug) {
+	$find_page = get_page_by_path($page_slug);
+	if ($find_page) {
+		return $find_page->ID;
+	} else {
+		return null;
+	}
+}
