@@ -39,9 +39,9 @@ get_header(); ?>
 
 				// Previous/next page navigation.
 				the_posts_pagination( array(
-					'prev_text'          => __( 'Previous page', 'zfwpbase' ),
-					'next_text'          => __( 'Next page', 'zfwpbase' ),
-					'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'zfwpbase' ) . ' </span>',
+					'prev_text'          => __( '&laquo; Previous', 'zfwpbase' ),
+					'next_text'          => __( 'Next &raquo;', 'zfwpbase' ),
+					'screen_reader_text' => __( 'Other Posts', 'zfwpbase' )
 				) );
 
 			// If no content, include the "No posts found" template.

@@ -48,8 +48,7 @@
 	</div><!-- .entry-content -->
 
 	<div class="entry-footer">
-		<?php //twentyfifteen_entry_meta(); ?>
-		<?php edit_post_link( __( 'Edit', 'zfwpbase' ), '<span class="edit-link">', '</span>' ); ?>
+
 	</div><!-- .entry-footer -->
 
 </article><!-- #post-## -->

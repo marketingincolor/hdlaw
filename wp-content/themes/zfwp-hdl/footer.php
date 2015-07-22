@@ -46,7 +46,7 @@
 							<?php dynamic_sidebar( 'sidebar-4' ); ?>
 						</div><!-- .widget-area -->
 					<?php endif; ?>
-					<span class="show-for-small-only"><hr class="footer-rule" /></span>
+					<div class="show-for-small-only"><hr class="footer-rule" /></div>
 				</div>
 
 				<div class="footer-separator hide-for-small-only medium-3 columns">
@@ -94,8 +94,8 @@
 						<div><a href="<?php echo esc_url( home_url( '/terms-of-use' ) ); ?>">Terms of Use</a></div>
 						<div>&nbsp;&#124;&nbsp;</div>
 						<div><a href="<?php echo esc_url( home_url( '/privacy' ) ); ?>">Privacy Policy</a></div>
-						<div>&nbsp;&#124;&nbsp;</div>
-						<div><a href="<?php echo esc_url( home_url( '/sitemap' ) ); ?>">Site Map</a></div>
+						<!--<div>&nbsp;&#124;&nbsp;</div>
+						<div><a href="<?php echo esc_url( home_url( '/sitemap' ) ); ?>">Site Map</a></div>-->
 					</div>
 					<span class="show-for-small-only"></span>
 					<div class="footer-copy alpha">&nbsp;&#124;&nbsp;Copyright &copy; <?php echo date("Y"); ?> HD Law Partners</div>
@@ -122,8 +122,8 @@
 		$('.frontpage-news-slider').slick({
 			slidesToShow: 3,
 			slidesToScroll: 1,
-			//autoplay: true,
-			//autoplaySpeed: 2000,
+			autoplay: true,
+			autoplaySpeed: 6000,
 			respondTo: 'min',
 			responsive: [
 				{
@@ -137,9 +137,9 @@
 		});
 		$('.frontpage-profiles-slider').slick({
 			slidesToShow: 3,
-			slidesToScroll: 1//,
-			//autoplay: true,
-			//autoplaySpeed: 2000
+			slidesToScroll: 1,
+			autoplay: true,
+			autoplaySpeed: 6000
 
 		});
 	});

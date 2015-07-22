@@ -30,12 +30,28 @@
 	<script src="<?php echo get_template_directory_uri(); ?>/js/vendor/modernizr.js"></script>
 
 	<?php wp_head(); ?>
+
+	<script type="text/javascript">
+		jQuery(function($){
+			$('.search-link').click(function () {
+				$('.header-search').toggleClass('close');
+			});
+		})
+	</script>
+
 </head>
 
 <body <?php body_class(); ?>>
 
 	<div class="row default large-collapse">
 		<div class="medium-12 hide-for-small-only columns">
+
+			<div class="header-search close">
+				<form method="get" id="searchform" action="<?php echo home_url();?>">
+					<div class="header-search-form small-6 small-centered columns"><div class="search-zoom search-btn"></div> <input id="s" name="s" type="text" placeholder="<?php _e('Type & hit enter to search','presslayer');?>" class="search-box" />
+					</div>
+				</form>
+			</div>
 
 			<header id="masthead" class="site-header" role="banner">
 			<div class="row">
@@ -74,6 +90,7 @@
 				</ul>
 				<section class="top-bar-section">
 					<?php
+					$search_link = '<li class="menu-item menu-item-type-custom-search"><a class="search-link">Search</a></li>';
 					wp_nav_menu( array(
 						'theme_location'  => 'primary',
 						'menu'            => 'main-menu',
@@ -85,7 +102,7 @@
 						'fallback_cb'     => 'wp_page_menu',
 						'link_before'     => '',
 						'link_after'      => '',
-						'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+						'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s'.$search_link.'</ul>',
 						'depth'           => 3,
 						'walker'          => new foundation_walker_nav_menu
 					) );

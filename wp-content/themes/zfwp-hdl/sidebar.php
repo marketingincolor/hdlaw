@@ -14,12 +14,13 @@
 	<?php else : ?>
 	<div class="columns show-for-medium-up">
 		<?php if ( function_exists( 'ccf_output_form' ) ) {
+			//echo do_shortcode( '[ccf_display id="181"]' );
 			echo do_shortcode( '[ccf_display id="64"]' );
 		} ?>
 	</div>
 	<?php endif; ?>
 
-	<div id="secondary" class="secondary">
+	<div id="secondary" class="secondary columns">
 
 		<?php if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
 			<div id="widget-area" class="widget-area" role="complementary">

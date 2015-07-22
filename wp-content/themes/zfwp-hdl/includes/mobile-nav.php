@@ -2,6 +2,9 @@
 /**
  * Custom display for Mobile Navigation.
  *
+ * @package WordPress
+ * @subpackage zfwp-base
+ * @since ZFWP Base 1.0
  */
 ?>
 <div class="mobile-nav">
@@ -46,6 +49,14 @@
 						</a>
 					</li>
 				</ul>
+				<form method="get" id="searchform" action="<?php echo home_url();?>">
+					<div class="header-search-mobile small-9 small-centered columns">
+						<div class="search-zoom search-btn" style="display:inline-block; float:left; margin-right:5px;">
+							<img src="<?php echo get_template_directory_uri(); ?>/img/hdl-grfx-ico-srch.png" />
+						</div>
+						<input id="s" name="s" type="text" placeholder="<?php _e('Type & hit enter to search','zfwp-base');?>" class="search-box-mobile" />
+					</div>
+				</form>
 			</div>
 		</li>
 	</ul>
