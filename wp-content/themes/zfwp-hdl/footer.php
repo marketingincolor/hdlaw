@@ -38,9 +38,9 @@
 	<div class="row large-collapse">
 		<footer id="colophon" class="site-footer" role="contentinfo">
 			<br />
-			<div class="row collapse medium-uncollapse large-uncollapse">
+			<div class="row collapse medium-uncollapse large-uncollapse" data-equalizerx>
 
-				<div class="small-12 medium-3 columns">
+				<div class="small-12 medium-3 columns" data-equalizer-watchx>
 					<?php if ( is_active_sidebar( 'sidebar-4' ) ) : ?>
 						<div id="widget-area" class="widget-area" role="complementary">
 							<?php dynamic_sidebar( 'sidebar-4' ); ?>
@@ -49,7 +49,7 @@
 					<div class="show-for-small-only"><hr class="footer-rule" /></div>
 				</div>
 
-				<div class="footer-separator hide-for-small-only medium-3 columns">
+				<div class="footer-separator hide-for-small-only medium-3 columns" data-equalizer-watchx>
 					<div id="widget-area" class="widget-area" role="complementary">
 						<div class="widget">
 							<h3 class="widget-title">Services</h3>
@@ -64,7 +64,7 @@
 					</div>
 				</div>
 
-				<div class="footer-separator small-12 medium-3 columns">
+				<div class="footer-separator small-12 medium-3 columns" data-equalizer-watchx>
 					<?php if ( is_active_sidebar( 'sidebar-5' ) ) : ?>
 						<div id="widget-area" class="widget-area" role="complementary">
 							<?php dynamic_sidebar( 'sidebar-5' ); ?>
@@ -73,7 +73,7 @@
 					<span class="show-for-small-only"><hr class="footer-rule" /></span>
 				</div>
 
-				<div class="footer-separator small-12 medium-3 columns">
+				<div class="footer-separator small-12 medium-3 columns" data-equalizer-watchx>
 					<?php if ( is_active_sidebar( 'sidebar-6' ) ) : ?>
 						<div id="widget-area" class="hide-for-small-only widget-area" role="complementary">
 							<?php dynamic_sidebar( 'sidebar-6' ); ?>
@@ -86,6 +86,10 @@
 					<?php endif; ?>
 				</div>
 
+			</div>
+			<div class="small-12 show-for-medium-up">
+				<div style="display:inline-block; font-size:1.25em;">Follow Us on Social Media!</div>
+				<?php do_action( 'social_icons', 'footer' ); ?>
 			</div>
 			<br />
 			<div class="row collapse medium-uncollapse large-uncollapse site-info">
@@ -112,6 +116,7 @@
 <script src="<?php echo get_template_directory_uri(); ?>/js/foundation/foundation.topbar.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/foundation/foundation.dropdown.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/foundation/foundation.accordion.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/js/foundation/foundation.equalizer.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/slick/slick.min.js"></script>
 <script>
 	$(document).foundation();

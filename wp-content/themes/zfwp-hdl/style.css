@@ -126,8 +126,8 @@ header { background-color:#fff; }
  * -----------------------------------------------------------------------------
  */
 .site-header { margin:30px 0px; }
-.header-search { position:absolute; background-color:#49c2c1; width:65%; height:100%; z-index:999; padding:20px; bottom:0; right:0; }
-.header-search-form { top:40px; }
+.header-search { position:absolute; background-color:#49c2c1; width:33%; height:30%; z-index:999; padding:2px; bottom:0; right:0; }
+.header-search-form { top:5px; }
 .close {visibility: hidden;}
 .show {visibility: visible;}
 .search-box-mobile { float:right; width:85% !important; }
@@ -352,6 +352,7 @@ footer .widget-area { text-align:left; }
 .site-footer .widget-title { font-weight:bold; color:#81e0de; }
 /*.site-footer .menu-footer-menu-container ul { list-style:none; margin-left:0; font-size: 0.750rem }*/
 .site-footer ul { list-style:none; margin-left:0; font-size: 0.750rem }
+.site-footer .social-icons { display:inline-block; }
 .menu-footer-menu-container li a, .menu-footer-menu-container li a:visited  { color:#fff; }
 .menu-footer-menu-container li a:hover { text-decoration:underline; }
 

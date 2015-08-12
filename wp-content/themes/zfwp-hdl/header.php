@@ -22,6 +22,7 @@
 	<title><?php bloginfo('name'); ?> </title>
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
+    <link rel="shortcut icon" href="<?php echo site_url(); ?>/favicon.ico">
 	<link href='http://fonts.googleapis.com/css?family=Muli:400,400italic,300italic,300' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/foundation.min.css" />
 	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/style.css" type="text/css" />
@@ -48,7 +49,7 @@
 
 			<div class="header-search close">
 				<form method="get" id="searchform" action="<?php echo home_url();?>">
-					<div class="header-search-form small-6 small-centered columns"><div class="search-zoom search-btn"></div> <input id="s" name="s" type="text" placeholder="<?php _e('Type & hit enter to search','presslayer');?>" class="search-box" />
+					<div class="header-search-form small-12 small-centered columns"><div class="search-zoom search-btn"></div> <input id="s" name="s" type="text" placeholder="<?php _e('Type & hit enter to search','presslayer');?>" class="search-box" />
 					</div>
 				</form>
 			</div>
